@@ -1,6 +1,9 @@
 up: ## Start all containers in foreground
 	docker-compose up -d --build
 
+work: ## Enter in php container to interact with composer
+	docker-compose exec php /bin/bash
+
 restart: ## Restart all containers in foreground
 	docker stop $$(docker ps -q)
 	docker-compose up -d --build
