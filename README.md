@@ -17,21 +17,15 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 ```bash
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
+4. Télécharger et installer le [package de mise à jour du noyau Linux](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
 
-4. Redémarrer l'ordinateur
-
-5. Télécharger et installer le [package de mise à jour du noyau Linux](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+5. Redémarrer l'ordinateur
 
 6. Définir WSL comme version par défaut via la commande suivante (PowerShell admin) :
 
 ```bash
 wsl --set-default-version 2
 ```
-7. Télécharger et installer [Ubuntu 20.04 LTS](https://www.microsoft.com/store/apps/9n6svws3rx71) via le Microsoft Store
-
-8. Lancer Ubuntu 20.04 LTS 
-
-9. Attendre le message de bienvenue (la création d'un USER peut être demandée)
 
 ## Installation cmd MAKE via le package Choco
 
