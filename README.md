@@ -68,14 +68,29 @@ choco install make
 
 3. Mettre en route les conteneurs docker avec la commande suivante :
 
+## Linux / Mac
+
 ```bash
 sudo make up
+```
+## Windows
+
+```bash
+make up
 ```
 
 4. Entrer dans le conteneur php via la commande suivante :
 
+## Linux / Mac
+
 ```bash
 sudo make work
+```
+
+## Windows
+
+```bash
+make work
 ```
 
 5. Récupérer les dépendances Symfony :
@@ -92,39 +107,37 @@ composer install
 
 Quitter le conteneur php :
 
-```bash
-exit
-```
-
-Relancer tout les conteneurs
-
-```bash
-sudo make restart
-```
-
-
-Quitter le conteneur php :
+## Windows / Mac / Linux
 
 ```bash
 exit
-```
-
-Arrêter et supprimer tout les conteneurs :
-
-```bash
-sudo make clean
 ```
 
 Arrêter tout les conteneurs :
 
+## Mac / Linux
+
 ```bash
 sudo make stop
+```
+## Windows
+
+```bash
+docker stop {docker ps -q}
 ```
 
 Supprimer tout les conteneurs :
 
+## Mac / Linux
+
 ```bash
 sudo make delete
+```
+
+## Windows
+
+```bash
+docker rm -v {docker ps -q}
 ```
 
 Idée Design
