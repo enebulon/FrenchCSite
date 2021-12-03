@@ -17,21 +17,15 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 ```bash
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
+4. Télécharger et installer le [package de mise à jour du noyau Linux](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
 
-4. Redémarrer l'ordinateur
-
-5. Télécharger et installer le [package de mise à jour du noyau Linux](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+5. Redémarrer l'ordinateur
 
 6. Définir WSL comme version par défaut via la commande suivante (PowerShell admin) :
 
 ```bash
 wsl --set-default-version 2
 ```
-7. Télécharger et installer [Ubuntu 20.04 LTS](https://www.microsoft.com/store/apps/9n6svws3rx71) via le Microsoft Store
-
-8. Lancer Ubuntu 20.04 LTS 
-
-9. Attendre le message de bienvenue (la création d'un USER peut être demandée)
 
 ## Installation cmd MAKE via le package Choco
 
@@ -74,11 +68,26 @@ choco install make
 
 3. Mettre en route les conteneurs docker avec la commande suivante :
 
+## Linux / Mac
+
+```bash
+sudo make up
+```
+## Windows
+
 ```bash
 make up
 ```
 
 4. Entrer dans le conteneur php via la commande suivante :
+
+## Linux / Mac
+
+```bash
+sudo make work
+```
+
+## Windows
 
 ```bash
 make work
@@ -98,39 +107,37 @@ composer install
 
 Quitter le conteneur php :
 
-```bash
-exit
-```
-
-Relancer tout les conteneurs
-
-```bash
-make restart
-```
-
-
-Quitter le conteneur php :
+## Windows / Mac / Linux
 
 ```bash
 exit
-```
-
-Arrêter et supprimer tout les conteneurs :
-
-```bash
-make clean
 ```
 
 Arrêter tout les conteneurs :
 
+## Mac / Linux
+
 ```bash
-make stop
+sudo make stop
+```
+## Windows
+
+```bash
+docker stop {docker ps -q}
 ```
 
 Supprimer tout les conteneurs :
 
+## Mac / Linux
+
 ```bash
-make delete
+sudo make delete
+```
+
+## Windows
+
+```bash
+docker rm -v {docker ps -q}
 ```
 
 Idée Design
